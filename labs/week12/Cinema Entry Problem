@@ -1,0 +1,51 @@
+Console.WriteLine("Welcome to our Multiplex");
+Console.WriteLine("We are presently showing:\n1. Rush (15)\n2. How I Live Now (15)\n3. Thor: The Dark World (12A)\n4. Filth (18)\n5. Planes (U)");
+
+int movie = 0;
+
+while (true)
+{
+    if ((movie != 1) && (movie != 2) && (movie != 3) && (movie != 4) && (movie != 5))
+    {
+        Console.Write("Enter the number of the film you wish to see: ");
+
+        movie = Convert.ToInt32(Console.ReadLine());
+        continue;
+    }
+    break;
+}
+
+int age = 0;
+
+while (true)
+{
+    if (age is <= 0 or > 130)
+    {
+        Console.Write("Enter your age: ");
+        age = Convert.ToInt32(Console.ReadLine());
+        continue;
+    }
+    break;
+}
+
+var ageRestrictions = new Dictionary<int, int>()
+{
+    {1, 15},
+    {2, 15},
+    {3, 12},
+    {4, 18},
+    {5, 0}
+};
+
+if (age >= ageRestrictions[movie])
+{
+    Console.WriteLine("Enjoy the film");
+}
+else if (age <ageRestrictions[movie])
+{
+    Console.WriteLine("Access denied – you are too young");
+}
+else
+{
+    Console.WriteLine("Invalid argument.");
+}
