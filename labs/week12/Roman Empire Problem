@@ -1,0 +1,45 @@
+Console.WriteLine("Welcome to choose your dynasty of Roman emperors during principate");
+Console.WriteLine(
+    "The following dynasties existed:\n" +
+    "1. Julio-Claudian dynasty (27 BC – AD 68))\n" +
+    "2. Flavian dynasty (69–95*)\n" +
+    "3. Nerva–Antonine dynasty (96*–192)\n" +
+    "4. Severan dynasty (193–235)");
+Console.WriteLine("* Disclaimer: Some simplifications have been made on the dynasty boundaries.\n");
+
+int year = -28;
+
+while (true)
+{
+    if (year is <= -27 or >= 284)
+    {
+        Console.Write("Enter the year of interest between -27 and 284 AD: ");
+
+        year = Convert.ToInt32(Console.ReadLine());
+        continue;
+    }
+    break;
+}
+
+if (year is >= -27 and <= 68)
+{
+    Console.WriteLine("Years of Julio-Claudian dynasty");
+}
+else if (year is >= 69 and <= 95)
+{
+    Console.WriteLine("Years of Flavian dynasty");
+}
+else if (year is >= 96 and <= 192)
+{
+    Console.WriteLine("Years of Nerva–Antonine dynasty");
+}
+else if (year is >= 193 and <= 235)
+{
+    Console.WriteLine("Years of Severan dynasty");
+}
+else
+{
+    Console.WriteLine("During these years, " +
+                      "the Roman Empire was ruled by an emperor " +
+                      "who did not belong to any of the dynasties above.");
+}
